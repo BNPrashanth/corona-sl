@@ -1,15 +1,15 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <Grid style={{
-      display: 'flex',
-      height: '100%',
-      flexDirection: 'column'
-    }}>
-      Coronavirus Status Tracker for Sri Lanka
-    </Grid>
+    <BrowserRouter>
+      {/* General Views */}
+      <Route path={'/'} component={Dashboard} exact />
+      <Redirect to={'/'} />
+    </BrowserRouter>
   );
 }
 
